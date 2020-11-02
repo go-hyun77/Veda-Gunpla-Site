@@ -63,8 +63,9 @@ body, html{
     box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
     overflow: visible;  /*allows dropdown to go past navigation bar bottom */
     position: fixed;
-    top: 0.5;
+    top: 0;
     width: 100%;
+    transition: top 0.3;
 }
 
 .navigationbar a{
@@ -85,14 +86,35 @@ body, html{
 }
 
 .navigationbar input[type=text]{
+    background-color: rgb(26, 24, 24);
+    background-image: url('img/icons/search.jpg');
+    background-position: 0px 8px;   /*position of search icon*/
+    background-repeat: no-repeat;
+    color: rgb(255, 255, 255); /*text color*/
     float: right;
-    padding: 6px;
-    border: none;
+    padding: 6px 6px 0px 25px; /*top right bottom left, position of search text*/
+    border: none; 
     margin-top: 8px;
     margin-right: 16px;
     font-size: 24px;
     font-family: Veda;
     text-transform: uppercase;
+    width: 100px;
+    transition: width 0.4s ease-in-out;
+}
+
+::placeholder{
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: 599;
+}
+
+.navigationbar input[type=text]:focus{  /*effects for on click*/
+    outline: none; /*no square outline*/
+    border-bottom: solid 1px;  
+    color: rgb(255, 255, 255);
+    background-color: rgb(26, 24, 24);
+    width: 20%; /*expand length of search field*/
 }
 
 .dropdown{
@@ -163,6 +185,6 @@ body, html{
     }
 
     navigationbar input[type=text]{
-        border: 1px solid #ccc;
+        border: 1px solid rgb(255, 255, 255);
     }
 }
