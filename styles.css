@@ -16,7 +16,7 @@ body, html{
     font-size: 25px;
     font-weight: bold;
     letter-spacing: 1px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .mainbg{ /*main background (thrones data/gn-drive tau/exia*/
@@ -65,18 +65,17 @@ body, html{
     position: fixed;
     top: 0;
     width: 100%;
-    transition: top 0.3;
+    height: 60px;
 }
 
-.navigationbar a{
+.navigationbar a{ /*objects in the bar*/
     float: left;
     color: #ffffff;
     text-align: center;
-    padding: 14px 30px;
+    padding: 20px 30px; /*top right*/
     font-size: 24px;
     font-weight: 599;  /*boldness of text*/
     letter-spacing: 1px;
-    /*border-right: 1px solid rgb(255, 255, 255);*/
     text-decoration: none;
 }
 
@@ -85,14 +84,39 @@ body, html{
     border-radius: 11px;
 }
 
+#check{
+    display: none;
+}
+
+#check:checked ~ navigationbar {
+    height: 100%;
+}
+
+.checkbutton{
+    font-size: 16px;    
+    color: white;
+    float: left;
+    line-height: 67px;
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.searchbutton{
+    font-size: 16px;
+    color: white;
+    float: right;
+    line-height: 67px;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
 .navigationbar input[type=text]{
     background-color: rgb(26, 24, 24);
-    background-image: url('img/icons/search.jpg');
-    background-position: 0px 8px;   /*position of search icon*/
     background-repeat: no-repeat;
     color: rgb(255, 255, 255); /*text color*/
     float: right;
-    padding: 6px 6px 0px 25px; /*top right bottom left, position of search text*/
+    padding: 12px 0px 3px; /*top right bottom left, position of search text*/
     border: none; 
     margin-top: 8px;
     margin-right: 16px;
@@ -103,19 +127,20 @@ body, html{
     transition: width 0.4s ease-in-out;
 }
 
+.navigationbar input[type=text]:focus{  /*effects for on click*/
+    outline: none; /*no square outline*/
+    border-bottom: solid 2px;  
+    color: rgb(255, 255, 255);
+    background-color: rgb(26, 24, 24);
+    width: 15%; /*expand length of search field*/
+}
+
 ::placeholder{
     color: rgb(255, 255, 255);
     font-size: 24px;
     font-weight: 599;
 }
 
-.navigationbar input[type=text]:focus{  /*effects for on click*/
-    outline: none; /*no square outline*/
-    border-bottom: solid 1px;  
-    color: rgb(255, 255, 255);
-    background-color: rgb(26, 24, 24);
-    width: 20%; /*expand length of search field*/
-}
 
 .dropdown{
     float: left; /*floats next to navigation bar buttons*/
@@ -123,7 +148,7 @@ body, html{
 }
 
 .dropbtn{   /*centers dropdown buttons text before hover*/
-    padding: 14px 16px;
+    padding: 20px 30px;
     background-color: rgb(26, 24, 24);
     color: #ffffff;
 }
@@ -174,17 +199,16 @@ body, html{
 
                                                     /* navigation bar end*/
 
-@media screen and (max-width: 600px){
-    .navigationbar a, .navigationbar input[type-text]{
-        float: left;
+@media screen and (max-width: 1200px){
+    .navigationbar a:not(:first-child), .dropdown .dropbtn{
+        display: none;
+    }    
+
+    .checkbutton{ /*display when screen shrinks*/
         display: block;
-        text-align: left;
-        width: 100%;
-        margin: 0;
-        padding: 14px 10px;
     }
 
-    navigationbar input[type=text]{
-        border: 1px solid rgb(255, 255, 255);
+    .navigationbar input[type=text]:focus{  /*effects for on click*/
+        width: 27%; /*expand length of search field*/
     }
 }
