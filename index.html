@@ -5,68 +5,74 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="styles.css"> 
-
-
-        <title>
-            Veda 
-        </title>
+        <script src="https://kit.fontawesome.com/4a594eca5a.js"></script>
+        <!-- <script src="scripts.js"></script> -->
+        <title>Veda</title>
     </head>
 
     <body>                  
-
       <div class="mainbg">          <!-- Main Background -->
       </div>                    <!-- Main Background End -->
 
-      <div class="navigationbar"> <!-- navbar begin-->
-        <a href="#home">
-          HOME
-        </a>
+        <div class="navigationbar" id="navbar"> <!-- navbar begin-->
 
-        <div class="dropdown">    <!--by series dropdown-->
-          <button class="dropbtn">BY SERIES</button> <!--dropdown button-->
-          <div class="dropdown-content">
-            <a href="#">GUNDAM 00</a>
-            <a href="#">GUNDAM SEED/SEED DESTINY/ASTRAY</a>
-            <a href="#">GUNDAM WING/ENDLESS WALTZ</a>
-            <a href="#">GUNDAM THE ORIGIN/U.C.0079</a>
-            <a href="#">GUNDAM UNICORN</a>
-            <a href="#">GUNDAM BUILD FIGHTERS/TRY</a>
-            <a href="#">OTHER</a>
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbutton">
+            <i class="fas fa-bars"></i>
+          </label>
+
+          <a href="#home">
+            HOME
+          </a>          
+
+          <div class="dropdown">    <!--by series dropdown-->
+            <button class="dropbtn">BY SERIES</button> <!--dropdown button-->
+            <div class="dropdown-content">
+              <a href="#">GUNDAM 00</a>
+              <a href="#">GUNDAM SEED/SEED DESTINY/ASTRAY</a>
+              <a href="#">GUNDAM WING/ENDLESS WALTZ</a>
+              <a href="#">GUNDAM THE ORIGIN/U.C.0079</a>
+              <a href="#">GUNDAM UNICORN</a>
+              <a href="#">GUNDAM BUILD FIGHTERS/TRY</a>
+              <a href="#">OTHER</a>
+            </div>
           </div>
-        </div>
 
-        <div class="dropdown">  <!--by grade dropdown-->
-          <button class="dropbtn">BY GRADE</button>
-          <div class="dropdown-content">
-            <a href="#">HIGH GRADE 1/144</a>
-            <a href="#">REAL GRADE 1/144</a>
-            <a href="#">MASTER GRADE 1/100</a>
+          <div class="dropdown">  <!--by grade dropdown-->
+            <button class="dropbtn">BY GRADE</button>
+            <div class="dropdown-content">
+              <a href="#">HIGH GRADE 1/144</a>
+              <a href="#">REAL GRADE 1/144</a>
+              <a href="#">MASTER GRADE 1/100</a>
+            </div>
           </div>
-        </div>
 
-        <div class="dropdown">  <!--other dropdown-->
-          <button class="dropbtn">OTHER KITS</button>
-          <div class="dropdown-content">
-            <a href="#">KOTOBUKIYA</a>
+          <div class="dropdown">  <!--other dropdown-->
+            <button class="dropbtn">OTHER KITS</button>
+            <div class="dropdown-content">
+              <a href="#">KOTOBUKIYA</a>
+            </div>
           </div>
-        </div>
 
-        <a href="#contact">
-          CONTACT
-        </a>
+          <a href="#faqs">
+            FAQS
+          </a>
 
-        
-        <input type="text" placeholder="SEARCH">
-       
-        
-        
+          <a href="#contact">
+            CONTACT
+          </a>
 
-      </div> <!-- navbar end -->
 
+          <input type="text" id="searchfield" placeholder="SEARCH . .">
+          <label for="searchfield" class="searchbutton">
+            <i class="fas fa-search"></i>
+          </label>
+      
+        </div> <!-- navbar end -->
+
+      
       <div class="main">
-       
-      </div>
-
-
+        
+          </div>
     </body>
 </html>
