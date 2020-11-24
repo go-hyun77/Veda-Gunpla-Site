@@ -132,7 +132,7 @@ body, html{
     border-bottom: solid 2px;  
     color: rgb(255, 255, 255);
     background-color: rgb(26, 24, 24);
-    width: 15%; /*expand length of search field*/
+    width: 150px; /*expand length of search field*/
 }
 
 ::placeholder{
@@ -157,10 +157,8 @@ body, html{
     font-size: 24px;
     font-weight: 599;
     border: none;
-    padding: 14x 30px;
     font-family: inherit;
     margin: 0;
-    /*border-right: 1px solid rgb(255, 255, 255);*/
     letter-spacing: 1px;
     text-align: center;
 }
@@ -179,7 +177,6 @@ body, html{
     font-weight: 600;
     background-color: rgb(255, 255, 255);
     color: #000000;
-    padding: 14x 16x;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -199,16 +196,33 @@ body, html{
 
                                                     /* navigation bar end*/
 
-@media screen and (max-width: 1200px){
-    .navigationbar a:not(:first-child), .dropdown .dropbtn{
-        display: none;
-    }    
+@media screen and (max-width: 1200px){  /*mobile screens*/
+    .navigationbar{
+        height: auto;
+        width: 100%;
+    }
+
+    #hometab{
+        width: 110px;
+        position: relative;
+    }
+
+    .navigationbar a{ 
+        width: 100%;
+        text-align: center;
+        border-radius: 11px;
+        padding: 20px 0px;  /*avoid stacking additional px*/
+    }
+
+    .dropbtn, .dropdown, .dropdown-content, .dropdown-content a, .dropdown:hover{
+        width: 100%;
+        text-align: center;
+        border-radius: 11px;
+    }
 
     .checkbutton{ /*display when screen shrinks*/
-        display: block;
+        display: inline-block;
     }
 
-    .navigationbar input[type=text]:focus{  /*effects for on click*/
-        width: 27%; /*expand length of search field*/
-    }
 }
+
