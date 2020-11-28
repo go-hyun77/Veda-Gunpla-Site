@@ -1,78 +1,71 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" dir="ltr">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="styles.css"> 
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
         <script src="https://kit.fontawesome.com/4a594eca5a.js"></script>
-        <!-- <script src="scripts.js"></script> -->
-        <title>Veda</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Veda - Gunpla by Go-Hyun</title>
     </head>
 
-    <body>                  
-      <div class="mainbg">          <!-- Main Background -->
-      </div>                    <!-- Main Background End -->
+    <body>
+        <div class="mainbg"></div> <!-- main background -->
 
-        <div class="navigationbar" id="navbar"> <!-- navbar begin-->
-
-          <input type="checkbox" id="check">
-          <label for="check" class="checkbutton">
-            <i class="fas fa-bars"></i>
-          </label>
-
-          <a href="#home" id="hometab">
-            HOME
-          </a>          
-
-          <div class="dropdown">    <!--by series dropdown-->
-            <button class="dropbtn">BY SERIES</button> <!--dropdown button-->
-            <div class="dropdown-content">
-              <a href="#">GUNDAM 00</a>
-              <a href="#">GUNDAM SEED/SEED DESTINY/ASTRAY</a>
-              <a href="#">GUNDAM WING/ENDLESS WALTZ</a>
-              <a href="#">GUNDAM THE ORIGIN/U.C.0079</a>
-              <a href="#">GUNDAM UNICORN</a>
-              <a href="#">GUNDAM BUILD FIGHTERS/TRY</a>
-              <a href="#">OTHER</a>
+        <nav>   <!--navigation bar start-->
+            <div class="logo">
+                VEDA
             </div>
-          </div>
 
-          <div class="dropdown">  <!--by grade dropdown-->
-            <button class="dropbtn">BY GRADE</button>
-            <div class="dropdown-content">
-              <a href="#">HIGH GRADE 1/144</a>
-              <a href="#">REAL GRADE 1/144</a>
-              <a href="#">MASTER GRADE 1/100</a>
-            </div>
-          </div>
+            <label for="btn" class="icon"> <!-- menu bar for mobile view, hidden by default-->
+                <span class="fa fa-bars"></span>
+            </label>
+            <input type="checkbox" id="btn">   
 
-          <div class="dropdown">  <!--other dropdown-->
-            <button class="dropbtn">OTHER KITS</button>
-            <div class="dropdown-content">
-              <a href="#">KOTOBUKIYA</a>
-            </div>
-          </div>
+            <ul>    <!-- navigation bar items-->
+                <li><a href="#">HOME</a></li>
+                <li>
+                    <label for="btn-1" class="show">BY SERIES</label>
+                    <a href="#">BY SERIES</a>
+                    <input type="checkbox" id="btn-1">
+                    <ul>    <!-- by series dropdown-->
+                        <li><a href="#">GUNDAM 00</a></li>
+                        <li><a href="#">GUNDAM SEED/SEED DESTINY/ASTRAY</a></li>
+                        <li><a href="#">GUNDAM WING/ENDLESS WALTZ</a></li>
+                        <li><a href="#">GUNDAM THE ORIGIN/U.C.0079</a></li>
+                        <li><a href="#">GUNDAM UNICORN</a></li>
+                        <li><a href="#">GUNDAM BUILD FIGHTERS/TRY</a></li>
+                        <li><a href="#">CROSSBONE GUNDAM</a></li>
+                        <li><a href="#">GUNDAM BUILD FIGHTERS/TRY</a></li>
+                        <li><a href="#">OTHER</a></li>
+                    </ul>
+                </li>
 
-          <a href="#faqs">
-            FAQS
-          </a>
+                <li>
+                    <label for="btn-2" class="show">BY GRADE</label>
+                    <a href="#">BY GRADE</a>
+                    <input type="checkbox" id="btn-2">
+                    <ul>    <!-- by grade dropdown -->
+                        <li><a href="#">HIGH GRADE 1/144</a></li>
+                        <li><a href="#">REAL GRADE 1/144</a></li>
+                        <li><a href="#">MASTER GRADE 1/100</a></li>
+                    </ul>
+                </li>
 
-          <a href="#contact">
-            CONTACT
-          </a>
+                <li><a href="#">OTHER KITS</a></li>
+                <li><a href="#">FAQS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>  <!-- navigation bar end-->
 
-          
-          <input type="text" id="searchfield" placeholder="SEARCH . .">
-          <label for="searchfield" class="searchbutton">
-            <i class="fas fa-search"></i>
-          </label>
-      
-        </div> <!-- navbar end -->
+        <div class="content">
 
-      
-      <div class="main">
-        
-          </div>
+        </div>
+
+        <script> /*move this to external file later*/
+            $('.icon').click(function () {
+                $('span').toggleClass("cancel");
+            });
+        </script>
     </body>
 </html>

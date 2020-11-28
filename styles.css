@@ -1,228 +1,241 @@
-body, html{
-    font-family: Veda;
-    height: 100%;
-    margin: 0;
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: Veda
 }
 
-@font-face {/*define the font*/
-    font-family: 'Veda';
-    font-style: normal;
-    src: url(fonts/veda.ttf);
-    
+@font-face {  /*define the font*/
+  font-family: 'Veda';
+  font-style: normal;
+  src: url(fonts/veda.ttf);
 }
-
-.main{
-    color: rgb(0, 0, 0);
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-top: 50px;
-}
-
 .mainbg{ /*main background (thrones data/gn-drive tau/exia*/
-    animation: animatemainbg 9s ease-in-out infinite normal;
-    background-size: cover;  
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: fixed;
-    height: 100vh;
-    left: 0;
-    opacity: 0.3; /*0.0 to 1.0, more less opaque*/
-    position: fixed;
-    top: 0;
-    width: 100%;
+  animation: animatemainbg 9s ease-in-out infinite normal;
+  background-size: cover;  
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  opacity: 0.3; /*0.0 to 1.0, more less opaque*/
+  position: fixed;
+  width: 100%;
+  z-index: -1; /*"beneath" other content*/
 }
 
 @keyframes animatemainbg{
-    0%{
-        background-image: url('img/Veda\ Background\ 1.jpg'), /*load all images first*/
-                          url('img/Veda\ Background\ 2.jpg'), 
-                          url('img/Veda\ Background\ 3.jpg');
-    }
+  0%{
+      background-image: url('img/Veda\ Background\ 1.jpg'), /*load all images first*/
+                        url('img/Veda\ Background\ 2.jpg'), 
+                        url('img/Veda\ Background\ 3.jpg');
+  }
 
-    50%{
-        background-image: url('img/Veda\ Background\ 2.jpg'); /*cycle through*/
-    }
+  50%{
+      background-image: url('img/Veda\ Background\ 2.jpg'); /*cycle through*/
+  }
 
-    75%{
-        background-image: url('img/Veda\ Background\ 3.jpg');
-    }
+  75%{
+      background-image: url('img/Veda\ Background\ 3.jpg');
+  }
 
-    100%{
-        background-image: url('img/Veda\ Background\ 1.jpg');
-    }
+  100%{
+      background-image: url('img/Veda\ Background\ 1.jpg');
+  }
+}
+
+nav{  /*nav bar container*/
+  background: rgb(26, 24, 24);
+  border-radius: 11px;
+  opacity: 1.0; /*0.0 to 1.0, lower=less opaque*/
+  letter-spacing: 1px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92); /*shadow for individual dropdown boxes*/
+
+}
+nav:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+nav .logo{
+  float: left;
+  color: white;
+  font-size: 40px;
+  font-weight: 599; /*boldness of text*/
+  line-height: 70px;
+  padding-left: 50px;
+  padding-right: 135px; /*space to the right of the logo*/
+}
+nav ul{
+  float: left;
+  list-style: none;
+  position: relative;
+}
+nav ul li{  /*containers for home/series/grade/faqs/contact*/
+  float: left; /*order of the buttons below*/
+  display: inline-block; /*each item start on new line*/
+  background: rgb(26, 24, 24);
+  margin: 0 5px; /*space between each container*/
+}
+
+@media screen and (min-width:1300px){ /*only when screen is desktop view*/
+  nav ul li:hover{  /*change color of entire button*/
+    background-color: rgb(138, 138, 138);
+    border-radius: 11px; /*rounded edges of container*/
+  }
+}
+
+nav ul li a{ /*home|series|grade|faqs|contact buttons*/
+  color: white;
+  line-height: 70px;
+  text-decoration: none;
+  font-weight: 599;
+  font-size: 24px;
+  padding: 20px 30px; /*top right down left*/
+}
+
+nav ul ul li a:hover{
+  box-shadow: none; /*avoid stacking shadows*/
+}
+
+nav ul ul{  /*dropdown buttons container*/
+  position: absolute;
+  top: 90px;
+  opacity: 1.0;
+  visibility: hidden; /*hidden by default, show on hover*/
+}
+nav ul li ul li a{ /*dropdown button text*/
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+}
+nav ul li:hover > ul{ /*container for dropdown*/
+  top: 69px;
+  opacity: 1.0;
+  visibility: visible; /*show dropdowns on hover here*/
+}
+nav ul ul li{ /*individual items in dropdown*/
+  position: relative;
+  margin: 0px;
+  width: auto;
+  float: none;
+  display: list-item;
+  border: solid 3px rgb(39, 38, 38);
+  border-radius: 11px;
+  box-shadow: 0 4px 4px 0 rgb(95, 92, 92); /*shadow for individual dropdown boxes*/
+  background-color: white;
+}
+nav ul ul li a{
+  line-height: 50px;
+}
+
+nav ul ul ul li{
+  position: relative;
+  top: -60px;
+  left: 150px;
+}
+.show,.icon,input{
+  display: none;
+}
+.fa-plus{
+  font-size: 15px;
+  margin-left: 40px;
 }
 
 
-
-.navigationbar{                                   /*navigation bar start*/
-    background-color: rgb(26, 24, 24);
-    border: 10px;
-    border-radius: 11px; /*curves at the ends of navigation bar*/
-    box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
-    overflow: visible;  /*allows dropdown to go past navigation bar bottom */
-    position: fixed;
-    top: 0;
+@media all and (max-width: 1300px) {  /*mobile view*/
+  nav ul{
+    margin-right: 0px;  /*move navbar buttons to the left*/
+    float: left;
+  }
+  nav .logo{
+    padding-left: 20px;
     width: 100%;
-    height: 60px;
-}
-
-.navigationbar a{ /*objects in the bar*/
-    float: left;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 30px; /*top right*/
-    font-size: 24px;
-    font-weight: 599;  /*boldness of text*/
-    letter-spacing: 1px;
-    text-decoration: none;
-}
-
-.navigationbar a:hover, .dropdown:hover .dropbtn{   /*lightens box color on mouse hover*/
-    background-color: rgb(107, 104, 104);
+  }
+  .show + a, ul{
+    display: none;
+  }
+  nav ul li{ /*container of all tabs*/
+    display: block;
+    width: 100%;
+  }
+  nav ul li a{ /*individual tabs*/
+    padding: 0 20px;
+  }
+  nav ul ul li{ /*dropdowns (grade,series,other)*/
+    display: block;
+    width: 99%;
+  }
+  nav ul ul li:hover{
+    background-color: rgb(138, 138, 138);
     border-radius: 11px;
-}
-
-#check{
-    display: none;
-}
-
-#check:checked ~ navigationbar {
-    height: 100%;
-}
-
-.checkbutton{
-    font-size: 16px;    
+  }
+  nav ul li a:hover{
+    box-shadow: none;
+  }
+  .show{
+    display: block;
     color: white;
-    float: left;
-    line-height: 67px;
-    margin: 0px 20px 0px 20px;
+    font-size: 24px;
+    padding: 0 20px;  /*left/right space of dropdown tabs !added padding from ul li a!*/
+    line-height: 70px; /*space between top and bottom of dropdowns*/
     cursor: pointer;
-    display: none;
-}
-
-.searchbutton{
-    font-size: 16px;
+  }
+  .show:hover{
     color: white;
-    float: right;
-    line-height: 67px;
-    margin-right: 7px;
-    cursor: pointer;
-}
-
-.navigationbar input[type=text]{
-    background-color: rgb(26, 24, 24);
-    background-repeat: no-repeat;
-    color: rgb(255, 255, 255); /*text color*/
-    float: right;
-    padding: 12px 0px 3px; /*top right bottom left, position of search text*/
-    border: none; 
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 24px;
-    font-family: Veda;
-    text-transform: uppercase;
-    width: 100px;
-    transition: width 0.4s ease-in-out;
-}
-
-.navigationbar input[type=text]:focus{  /*effects for on click*/
-    outline: none; /*no square outline*/
-    border-bottom: solid 2px;  
-    color: rgb(255, 255, 255);
-    background-color: rgb(26, 24, 24);
-    width: 150px; /*expand length of search field*/
-}
-
-::placeholder{
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    font-weight: 599;
-}
-
-
-.dropdown{
-    float: left; /*floats next to navigation bar buttons*/
-    overflow: hidden; 
-}
-
-.dropbtn{   /*centers dropdown buttons text before hover*/
-    padding: 20px 30px;
-    background-color: rgb(26, 24, 24);
-    color: #ffffff;
-}
-
-.dropdown .dropbtn{
-    font-size: 24px;
-    font-weight: 599;
-    border: none;
-    font-family: inherit;
-    margin: 0;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-.dropdown-content{  /*the wrapper*/
-    display: none;  /*hide the content by default, only shows on hover*/
+  }
+  .icon{
+    display: block;
+    color: white;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0);
-    border: hidden;
-    border-radius: 11px;
-    z-index: 1; 
-}
-
-.dropdown-content a{    /*the actual buttons in the dropdown*/
+    top: 0;
+    right: 30px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  nav ul ul{ 
+    top: 70px;
+    border-top: 0px;
     float: none;
-    font-weight: 600;
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-    text-decoration: none;
+    position: static;
+    display: none;
+    opacity: 1.0;
+    visibility: visible;
+  }
+  nav ul ul a{  /*tabs in dropdown container (gundam series/grade)*/
+    padding-left: 17px;
+    font-size: 24px;
+  }
+
+  [id^=btn]:checked + ul{ /*on click, display dropdown tabs */
     display: block;
-    text-align: left;
-    border: solid;
-    border-radius: 11px; /*curves for dropdown*/
-    box-shadow: 0 2px 3px 0 rgb(95, 92, 92); /*shadow for individual dropdown boxes*/
-
+  }
+  nav ul ul li{
+    border-bottom: 0px;
+  }
+  span.cancel:before{
+    content: '\f00d';
+  }
 }
-
-.dropdown-content a:hover{  
-    background-color: rgb(146, 146, 146);
+.content{
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
 }
-
-.dropdown:hover .dropdown-content{
-    display: block;
+header{
+  font-size: 35px;
+  font-weight: 600;
+  padding: 10px 0;
 }
-
-                                                    /* navigation bar end*/
-
-@media screen and (max-width: 1200px){  /*mobile screens*/
-    .navigationbar{
-        height: auto;
-        width: 100%;
-    }
-
-    #hometab{
-        width: 110px;
-        position: relative;
-    }
-
-    .navigationbar a{ 
-        width: 100%;
-        text-align: center;
-        border-radius: 11px;
-        padding: 20px 0px;  /*avoid stacking additional px*/
-    }
-
-    .dropbtn, .dropdown, .dropdown-content, .dropdown-content a, .dropdown:hover{
-        width: 100%;
-        text-align: center;
-        border-radius: 11px;
-    }
-
-    .checkbutton{ /*display when screen shrinks*/
-        display: inline-block;
-    }
-
+p{
+  font-size: 30px;
+  font-weight: 500;
 }
 
