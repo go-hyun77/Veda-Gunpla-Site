@@ -67,7 +67,7 @@ nav .logo{
   font-weight: 599; /*boldness of text*/
   line-height: 70px;
   padding-left: 50px;
-  padding-right: 135px; /*space to the right of the logo*/
+  padding-right: 9%; /*space to the right of the logo*/
 }
 nav ul{
   float: left;
@@ -80,14 +80,6 @@ nav ul li{  /*containers for home/series/grade/faqs/contact*/
   background: rgb(26, 24, 24);
   margin: 0 5px; /*space between each container*/
 }
-
-@media screen and (min-width:1300px){ /*only when screen is desktop view*/
-  nav ul li:hover{  /*change color of entire button*/
-    background-color: rgb(138, 138, 138);
-    border-radius: 11px; /*rounded edges of container*/
-  }
-}
-
 nav ul li a{ /*home|series|grade|faqs|contact buttons*/
   color: white;
   line-height: 70px;
@@ -145,8 +137,24 @@ nav ul ul ul li{
   margin-left: 40px;
 }
 
+@media screen and (min-width:1300px){ /*only when screen is desktop view*/
+  nav ul li:hover{  /*change color of entire button*/
+    background-color: rgb(138, 138, 138);
+    border-radius: 11px; /*rounded edges of container*/
+  }
+}
 
-@media all and (max-width: 1300px) {  /*mobile view*/
+@media all and (max-width: 1300px) { /*shrink navbar before switch to mobile view*/
+  nav .logo{
+    padding-right: 30px; /*space to the right of the logo*/
+  }
+  nav ul li:hover{  /*change color of entire button*/
+    background-color: rgb(138, 138, 138);
+    border-radius: 11px; /*rounded edges of container*/
+  }
+}
+
+@media all and (max-width: 1170px) {  /*mobile view*/
   nav ul{
     margin-right: 0px;  /*move navbar buttons to the left*/
     float: left;
@@ -192,7 +200,7 @@ nav ul ul ul li{
     color: white;
     position: absolute;
     top: 0;
-    right: 30px;
+    right: 20px;
     line-height: 70px;
     cursor: pointer;
     font-size: 20px;
@@ -217,7 +225,7 @@ nav ul ul ul li{
   nav ul ul li{
     border-bottom: 0px;
   }
-  span.cancel:before{
+  span.cancel:before{ /*changes bar icon to x icon on click*/
     content: '\f00d';
   }
 }
