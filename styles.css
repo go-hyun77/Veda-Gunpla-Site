@@ -144,11 +144,11 @@ nav ul ul ul li{
   }
 }
 
-@media all and (max-width: 1300px) { /*shrink navbar before switch to mobile view*/
+@media all and (min-width: 1170px) and (max-width: 1300px) { /*shrink navbar before switch to mobile view*/
   nav .logo{
     padding-right: 30px; /*space to the right of the logo*/
   }
-  nav ul li:hover{  /*change color of entire button*/
+  nav ul li:hover{  /*highlight on hover*/
     background-color: rgb(138, 138, 138);
     border-radius: 11px; /*rounded edges of container*/
   }
@@ -173,6 +173,8 @@ nav ul ul ul li{
   nav ul li a{ /*individual tabs*/
     padding: 0 20px;
   }
+
+
   nav ul ul li{ /*dropdowns (grade,series,other)*/
     display: block;
     width: 99%;
@@ -246,4 +248,3 @@ p{
   font-size: 30px;
   font-weight: 500;
 }
-
