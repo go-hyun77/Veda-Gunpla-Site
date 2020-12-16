@@ -60,6 +60,7 @@ nav:after{
   clear: both;
   display: table;
 }
+
 nav .logo{
   float: left;
   color: white;
@@ -69,17 +70,20 @@ nav .logo{
   padding-left: 50px;
   padding-right: 9%; /*space to the right of the logo*/
 }
+
 nav ul{
   float: left;
   list-style: none;
   position: relative;
 }
+
 nav ul li{  /*containers for home/series/grade/faqs/contact*/
   float: left; /*order of the buttons below*/
   display: inline-block; /*each item start on new line*/
   background: rgb(26, 24, 24);
   margin: 0 5px; /*space between each container*/
 }
+
 nav ul li a{ /*home|series|grade|faqs|contact buttons*/
   color: white;
   line-height: 70px;
@@ -154,7 +158,32 @@ nav ul ul ul li{
   }
 }
 
-@media all and (max-width: 1170px) {  /*mobile view*/
+@media all and (min-width: 1000px) and (max-width: 1170px) { /*shrink more*/
+  nav ul li a{
+    padding: 20px 20px;
+  }
+  nav .logo{
+    padding-left: 20px;
+    padding-right: 5%; /*space to the right of the logo*/
+  }
+  nav ul li:hover{  /*highlight on hover*/
+    background-color: rgb(138, 138, 138);
+    border-radius: 11px; /*rounded edges of container*/
+  }
+}
+
+@media all and (min-width: 1000px) and (max-width: 1045px) { /*shrink even more*/
+  nav .logo{
+    padding-left: 20px;
+    padding-right: 2%; /*space to the right of the logo*/
+  }
+  nav ul li:hover{  /*highlight on hover*/
+    background-color: rgb(138, 138, 138);
+    border-radius: 11px; /*rounded edges of container*/
+  }
+}
+
+@media all and (max-width: 1000px) {  /*mobile view*/
   nav ul{
     margin-right: 0px;  /*move navbar buttons to the left*/
     float: left;
@@ -173,7 +202,10 @@ nav ul ul ul li{
   nav ul li a{ /*individual tabs*/
     padding: 0 20px;
   }
-
+  nav ul li label a:hover{
+    background-color: rgb(138, 138, 138);
+    border-radius: 11px;
+  }
 
   nav ul ul li{ /*dropdowns (grade,series,other)*/
     display: block;
@@ -231,6 +263,7 @@ nav ul ul ul li{
     content: '\f00d';
   }
 }
+
 .content{
   z-index: -1;
   position: absolute;
@@ -248,3 +281,4 @@ p{
   font-size: 30px;
   font-weight: 500;
 }
+
