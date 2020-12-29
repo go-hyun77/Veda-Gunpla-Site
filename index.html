@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
         <script src="https://kit.fontawesome.com/4a594eca5a.js"></script>
+        <script src="scripts.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Veda - Gunpla by Go-Hyun</title>
     </head>
@@ -24,11 +25,12 @@
 
             <ul>    <!-- navigation bar items-->
                 <li><a href="#">HOME</a></li>
-                <li>
+                
+                <li><!-- by series dropdown-->
                     <label for="btn-1" class="show">BY SERIES</label>
                     <a href="#">BY SERIES</a>
                     <input type="checkbox" id="btn-1">
-                    <ul>    <!-- by series dropdown-->
+                    <ul>    
                         <li><a href="#">GUNDAM 00</a></li>
                         <li><a href="#">GUNDAM SEED/SEED DESTINY/ASTRAY</a></li>
                         <li><a href="#">GUNDAM WING/ENDLESS WALTZ</a></li>
@@ -41,11 +43,11 @@
                     </ul>
                 </li>
 
-                <li>
+                <li> <!-- by grade dropdown -->
                     <label for="btn-2" class="show">BY GRADE</label>
                     <a href="#">BY GRADE</a>
                     <input type="checkbox" id="btn-2">
-                    <ul>    <!-- by grade dropdown -->
+                    <ul>    
                         <li><a href="#">HIGH GRADE 1/144</a></li>
                         <li><a href="#">REAL GRADE 1/144</a></li>
                         <li><a href="#">MASTER GRADE 1/100</a></li>
@@ -62,10 +64,8 @@
 
         </div>
 
-        <script> /*move this to external file later*/
-            $('.icon').click(function () {
-                $('span').toggleClass("cancel");
-            });
-        </script>
+        <!-- NOTE -->
+        <script src="scripts.js"></script> 
+        <!--include js file at the end to execute after html has loaded-->
     </body>
 </html>
