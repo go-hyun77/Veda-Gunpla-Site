@@ -27,6 +27,7 @@
   z-index: -1; /*"beneath" other content*/
 }
 
+
 @keyframes animatemainbg{
   0%{
       background-image: url('img/Veda\ Background\ 1.jpg'), /*load all images first*/
@@ -46,6 +47,8 @@
       background-image: url('img/Veda\ Background\ 1.jpg');
   }
 }
+
+/*_________________________NAVIGATION BAR___________________________*/
 
 nav{  /*nav bar container*/
   background: rgb(26, 24, 24);
@@ -92,11 +95,9 @@ nav ul li a{ /*home|series|grade|faqs|contact buttons*/
   font-size: 24px;
   padding: 20px 30px; /*top right down left*/
 }
-
 nav ul ul li a:hover{
   box-shadow: none; /*avoid stacking shadows*/
 }
-
 nav ul ul{  /*dropdown buttons container*/
   position: absolute;
   top: 90px;
@@ -197,24 +198,27 @@ nav ul ul ul li{
   }
   nav ul li{ /*container of all tabs*/
     display: block;
-    width: 100%;
+
+    width: 99.9%;
   }
+  
   nav ul li a{ /*individual tabs*/
     padding: 0 20px;
   }
-  nav ul li label a:hover{
-    background-color: rgb(138, 138, 138);
-    border-radius: 11px;
-  }
-
+ 
   nav ul ul li{ /*dropdowns (grade,series,other)*/
     display: block;
     width: 99%;
   }
-  nav ul ul li:hover{
+  nav ul ul li:hover{ /*highlight box on hover */
     background-color: rgb(138, 138, 138);
     border-radius: 11px;
   }
+
+  .label:hover{
+    color: rgb(138, 138, 138);
+  }
+
   nav ul li a:hover{
     box-shadow: none;
   }
@@ -264,21 +268,31 @@ nav ul ul ul li{
   }
 }
 
-.content{
+/*_________________________BODY___________________________*/
+
+.centerlogo{
   z-index: -1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  display: block;
   text-align: center;
 }
-header{
-  font-size: 35px;
+
+h1{
+  font-size: 75px;
   font-weight: 600;
-  padding: 10px 0;
+  letter-spacing: 3px;
+  border: 3px solid black;
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
 }
-p{
+
+h2{
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
+
 
