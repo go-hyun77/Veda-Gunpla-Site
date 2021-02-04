@@ -56,8 +56,8 @@ nav{  /*nav bar container*/
   opacity: 1.0; /*0.0 to 1.0, lower=less opaque*/
   letter-spacing: 1px;
   box-shadow: 0 2px 3px 0 rgb(95, 92, 92); /*shadow for individual dropdown boxes*/
-
 }
+
 nav:after{
   content: '';
   clear: both;
@@ -85,6 +85,7 @@ nav ul li{  /*containers for home/series/grade/faqs/contact*/
   display: inline-block; /*each item start on new line*/
   background: rgb(26, 24, 24);
   margin: 0 5px; /*space between each container*/
+  transition: linear 0.2s;
 }
 
 nav ul li a{ /*home|series|grade|faqs|contact buttons*/
@@ -101,7 +102,8 @@ nav ul ul li a:hover{
 nav ul ul{  /*dropdown buttons container*/
   position: absolute;
   top: 90px;
-  opacity: 1.0;
+  opacity: 0.0;
+  transition: bottom 0.1s;
   visibility: hidden; /*hidden by default, show on hover*/
 }
 nav ul li ul li a{ /*dropdown button text*/
@@ -295,4 +297,13 @@ h2{
   letter-spacing: 1px;
 }
 
+.slider .card .img{
+  height: 200px;
+  width: 100%;
+}
 
+.img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
