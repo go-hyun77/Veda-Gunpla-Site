@@ -5,7 +5,6 @@
   box-sizing: border-box;
   font-family: Veda
 }
-
 @font-face {  /*define the font*/
   font-family: 'Veda';
   font-style: normal;
@@ -26,8 +25,6 @@
   width: 100%;
   z-index: -1; /*"beneath" other content*/
 }
-
-
 @keyframes animatemainbg{
   0%{
       background-image: url('img/Veda\ Background\ 1.jpg'), /*load all images first*/
@@ -57,13 +54,11 @@ nav{  /*nav bar container*/
   letter-spacing: 1px;
   box-shadow: 0 2px 3px 0 rgb(95, 92, 92); /*shadow for individual dropdown boxes*/
 }
-
 nav:after{
   content: '';
   clear: both;
   display: table;
 }
-
 nav .logo{
   float: left;
   color: white;
@@ -73,24 +68,21 @@ nav .logo{
   padding-left: 50px;
   padding-right: 9%; /*space to the right of the logo*/
 }
-
 nav ul{
   float: left;
   list-style: none;
   position: relative;
 }
-
 nav ul li{  /*containers for home/series/grade/faqs/contact*/
   float: left; /*order of the buttons below*/
   display: inline-block; /*each item start on new line*/
   background: rgb(26, 24, 24);
   margin: 0 5px; /*space between each container*/
-  transition: linear 0.2s;
+  transition: linear 0.15s;
 }
-
 nav ul li a{ /*home|series|grade|faqs|contact buttons*/
   color: white;
-  line-height: 70px;
+  line-height: 70px; /*height of nav*/
   text-decoration: none;
   font-weight: 599;
   font-size: 24px;
@@ -130,7 +122,6 @@ nav ul ul li{ /*individual items in dropdown*/
 nav ul ul li a{
   line-height: 50px;
 }
-
 nav ul ul ul li{
   position: relative;
   top: -60px;
@@ -143,14 +134,12 @@ nav ul ul ul li{
   font-size: 15px;
   margin-left: 40px;
 }
-
 @media screen and (min-width:1300px){ /*only when screen is desktop view*/
   nav ul li:hover{  /*change color of entire button*/
     background-color: rgb(138, 138, 138);
     border-radius: 11px; /*rounded edges of container*/
   }
 }
-
 @media all and (min-width: 1170px) and (max-width: 1300px) { /*shrink navbar before switch to mobile view*/
   nav .logo{
     padding-right: 30px; /*space to the right of the logo*/
@@ -160,7 +149,6 @@ nav ul ul ul li{
     border-radius: 11px; /*rounded edges of container*/
   }
 }
-
 @media all and (min-width: 1000px) and (max-width: 1170px) { /*shrink more*/
   nav ul li a{
     padding: 20px 20px;
@@ -174,7 +162,6 @@ nav ul ul ul li{
     border-radius: 11px; /*rounded edges of container*/
   }
 }
-
 @media all and (min-width: 1000px) and (max-width: 1045px) { /*shrink even more*/
   nav .logo{
     padding-left: 20px;
@@ -185,7 +172,6 @@ nav ul ul ul li{
     border-radius: 11px; /*rounded edges of container*/
   }
 }
-
 @media all and (max-width: 1000px) {  /*mobile view*/
   nav ul{
     margin-right: 0px;  /*move navbar buttons to the left*/
@@ -269,33 +255,82 @@ nav ul ul ul li{
     content: '\f00d';
   }
 }
+/*_________________________NAVIGATION BAR END___________________________*/
 
 /*_________________________BODY___________________________*/
 
-.centerlogo{
-  z-index: -1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  display: block;
+.container{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 2.5fr 1.5fr 0.5fr;
+  grid-template-areas:
+     "main main main main"
+     "content1 content2 content3 content4"
+     "footer footer footer footer";
+  grid-gap: 0.7rem;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-align: center;
 }
 
-h1{
+@media only screen and (max-width: 1000px) {  /*mobile view*/
+  .container{
+    grid-template-columns: 1fr; /*only 1 column*/
+    grid-template-rows: 5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+       "main"
+       "content1"
+       "content2"
+       "content3"
+       "content4"
+       "footer";
+  }
+}
+main{
+   grid-area: main;
+}
+#content1{
+  background: gray;
+  grid-area: content1;
+}
+#content2{
+  background: rgb(136, 136, 136);
+  grid-area: content2;
+}
+#content3{
+  background: rgb(177, 177, 177);
+  grid-area: content3;
+}
+#content4{
+  background: rgb(204, 201, 201);
+  grid-area: content4;
+}
+footer{
+  background:rgb(83, 81, 81);
+  grid-area: footer;
+}
+p1{
+  z-index: -1;
   font-size: 75px;
   font-weight: 600;
   letter-spacing: 3px;
-  border: 3px solid black;
+  padding: 0px 50px;
+  border: 3px solid black;  
   border-radius: 11px;
   box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  position: relative;
+  top: 40%;
 }
-
-h2{
+p2{
+  z-index: -1;
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 1px;
+  position: relative;
+  top: 43%;
 }
 
-
+/*_________________________BODY END___________________________*/
 
