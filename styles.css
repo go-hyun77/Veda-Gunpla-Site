@@ -256,23 +256,24 @@ nav ul ul ul li{
   }
 }
 /*_________________________NAVIGATION BAR END___________________________*/
-
 /*_________________________BODY___________________________*/
 
 .container{
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 2.5fr 1.5fr 0.5fr;
+  grid-template-rows: 2.5fr 1.5fr 1.5fr 0.5fr;
   grid-template-areas:
      "main main main main"
      "content1 content2 content3 content4"
+     "content5 content5 content5 content5"
      "footer footer footer footer";
-  grid-gap: 0.7rem;
+  grid-gap: 0.7rem; /*space between column/rows*/
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 3px;
   text-align: center;
+  padding: 10px; /*space around edge of window*/
 }
 
 @media only screen and (max-width: 1000px) {  /*mobile view*/
@@ -285,6 +286,7 @@ nav ul ul ul li{
        "content2"
        "content3"
        "content4"
+       "content5"
        "footer";
   }
 }
@@ -292,24 +294,46 @@ main{
    grid-area: main;
 }
 #content1{
-  background: gray;
   grid-area: content1;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
 }
 #content2{
-  background: rgb(136, 136, 136);
   grid-area: content2;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
 }
 #content3{
-  background: rgb(177, 177, 177);
   grid-area: content3;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
 }
 #content4{
-  background: rgb(204, 201, 201);
   grid-area: content4;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+}
+#content5{
+  grid-area: content5;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
 }
 footer{
-  background:rgb(83, 81, 81);
   grid-area: footer;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
 }
 p1{
   z-index: -1;
