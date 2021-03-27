@@ -263,52 +263,177 @@ nav ul ul ul li{
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 2.5fr 1.5fr 0.5fr;
+  grid-template-rows: 26em 5em 10em 10em 1em;
   grid-template-areas:
      "main main main main"
+     "textcontent textcontent textcontent textcontent"
      "content1 content2 content3 content4"
+     "content5 content6 content7 content8"
      "footer footer footer footer";
-  grid-gap: 0.7rem;
-  font-size: 30px;
+  grid-gap: 0.7rem; /*space between column/rows*/
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: 3px;
   text-align: center;
+  justify-content: center;
+  padding: 10px; /*space around edge of window*/
 }
 
 @media only screen and (max-width: 1000px) {  /*mobile view*/
   .container{
     grid-template-columns: 1fr; /*only 1 column*/
-    grid-template-rows: 5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 650px 100px 100px 100px 100px 2em 100px 100px 100px 100px 1fr;
     grid-template-areas: 
        "main"
        "content1"
        "content2"
        "content3"
        "content4"
+       "textcontent"
+       "content5"
+       "content6"
+       "content7"
+       "content8"
        "footer";
   }
 }
 main{
    grid-area: main;
 }
+.contentheading{
+  position: relative;
+  opacity: 0;
+  transition: 0.3s ease;
+  top: 40%;
+  padding: 10px;
+}
 #content1{
-  background: gray;
+  background-image: url('img/Zwei\ 1.jpg');
+  background-position: center;
+  background-size: cover;
   grid-area: content1;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  line-height: 50%;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+#content1:hover .contentheading{
+  opacity: 1;  
 }
 #content2{
-  background: rgb(136, 136, 136);
+  background-image: url('img/Fenice\ 1.jpg');
+  background-position: center;
+  background-size: cover;
   grid-area: content2;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  line-height: 50%;
+  cursor: pointer;
+}
+#content2:hover .contentheading{
+  opacity: 1;
 }
 #content3{
-  background: rgb(177, 177, 177);
+  background-image: url('img/Masurao\ 1.jpg');
+  background-position: center;
+  background-size: cover;
   grid-area: content3;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  line-height: 50%;
+  cursor: pointer;
+}
+#content3:hover .contentheading{
+  opacity: 1;
 }
 #content4{
-  background: rgb(204, 201, 201);
+  background-image: url('img/Tallgeese\ 1.jpg');
+  background-position: center;
+  background-size: cover;
   grid-area: content4;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  line-height: 50%;
+  cursor: pointer;
+}
+#content4:hover .contentheading{
+  opacity: 1;
+}
+#textcontent{
+  grid-area: textcontent;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  line-height: 50%;
+}
+#content5{
+  background-image: url('img/Dynames\ 1.jpg');
+  background-position: center;
+  background-size: cover;
+  grid-area: content5;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  line-height: 50%;
+  cursor: pointer;
+}
+#content5:hover .contentheading{
+  opacity: 1;
+}
+#content6{
+  background-position: center;
+  background-size: cover;
+  grid-area: content6;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  line-height: 50%;
+  cursor: pointer;
+}
+#content6:hover .contentheading{
+  opacity: 1;
+}
+#content7{
+  background-position: center;
+  background-size: cover;
+  grid-area: content7;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  line-height: 50%;
+  cursor: pointer;
+}
+#content7:hover .contentheading{
+  opacity: 1;
+}
+#content8{
+  background-position: center;
+  background-size: cover;
+  grid-area: content8;
+  border-radius: 11px;
+  border: 3px solid black;  
+  border-radius: 11px;
+  box-shadow: 0 2px 3px 0 rgb(95, 92, 92);
+  line-height: 50%;
+  cursor: pointer;
+}
+#content8:hover .contentheading{
+  opacity: 1;
 }
 footer{
-  background:rgb(83, 81, 81);
   grid-area: footer;
 }
 p1{
@@ -333,4 +458,3 @@ p2{
 }
 
 /*_________________________BODY END___________________________*/
-
