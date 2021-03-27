@@ -451,7 +451,7 @@ p1{
 p2{
   z-index: -1;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 600; 
   letter-spacing: 1px;
   position: relative;
   top: 43%;
